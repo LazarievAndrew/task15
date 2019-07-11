@@ -1,8 +1,11 @@
+// Четные числа.
+// Написать функцию getNumberOfEven(n) - получить количество четных цифр в числе.
+
 var number;
 
 do {
     number = prompt('Введите любое число:')
-} while (isNaN(parseInt(number)) || !isFinite(number))
+} while (isNaN(parseInt(number)) || !isFinite(number));
 
 function getNumberOfEven(n){
     var even = 0;
