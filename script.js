@@ -1,20 +1,25 @@
 // Четные числа.
 // Написать функцию getNumberOfEven(n) - получить количество четных цифр в числе.
 
-var number;
+
+function isNumeric(x){
+    return !isNaN(parseFloat(x)) && isFinite(x);
+}
+
 
 do {
-    number = prompt('Введите любое число:')
-} while (isNaN(parseInt(number)) || !isFinite(number));
+    var number = +prompt('Введите корректное число:');
+} while (!isNumeric(number) || !number);
 
 function getNumberOfEven(n){
+    n = String(n); // либо n += '';
     var even = 0;
     for ( var i = 0; i < n.length; i++){
-        if (n.charAt(i) % 2 === 0){
+        if (!(n.charAt(i) % 2)) {
             even++;
         }
     }
-    alert('Количество четных цифр в числе: ' + even);
+    return even;
 }
 
-getNumberOfEven(number);
+alert('Количество четных цифр в числе: ' + getNumberOfEven(number));
